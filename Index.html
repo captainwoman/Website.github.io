@@ -1,0 +1,43 @@
+---
+title: "My Homepage"
+---
+
+Welcome
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, cache = TRUE,echo = FALSE,message = FALSE,warning = FALSE)
+```
+
+
+## My Slide contents 
+
+- **Showing 3-D heatmap** 
+- **Showing Boxplot**
+
+```{r prerequistes}
+library(plotly)
+library(data.table)
+library(tidyr)
+library(lubridate)
+library(zoo)
+```
+## Slide with R Output
+
+```{r volcano, echo = TRUE, comment=""}
+head(volcano)
+head(InsectSprays)
+
+```
+
+## Slide with Plot
+
+```{r plot}
+plot_ly(z= volcano,type = "surface")
+```
+
+## Slide with plot 2
+
+```{r}
+plot_ly(InsectSprays,x= ~ spray, y=~count,type="box", boxmean =TRUE)
+
+```
